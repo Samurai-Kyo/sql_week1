@@ -1,0 +1,16 @@
+use Employees;
+select* fROM employees WHERE birth_date < '1965-01-01';
+select* fROM employees WHERE gender = 'F' AND hire_date < '1990-01-01';
+select first_name,last_name fROM employees WHERE last_name like 'F%' limit 50;
+insert into employees(emp_no,birth_date,first_name,last_name,gender,hire_date) values (100,'1990-01-01','James','Smith','M','2015-01-01');
+insert into employees(emp_no,birth_date,first_name,last_name,gender,hire_date) values (101,'1990-02-02','Kathy','Smith','F','2015-02-02');
+insert into employees(emp_no,birth_date,first_name,last_name,gender,hire_date) values (102,'1990-03-03','Tom','Smith','M','2015-03-03');
+select* fROM employees WHERE hire_date < '2015-03-04' AND hire_date > '2014-10-10';
+UPDATE employees Set first_name = 'Bob' WHERE emp_no = 10023;
+select* fROM employees WHERE emp_no = 10023;
+UPDATE employees.employees SET hire_date = '2002-01-01' WHERE first_name like ('P%') OR last_name like ('P%');
+select* fROM employees WHERE first_name like ('P%') OR last_name like ('P%');
+delete fROM employees WHERE emp_no < 10000;
+select* fROM employees WHERE emp_no < 10010;
+delete fROM employees WHERE emp_no = 10048 OR emp_no = 10099 OR emp_no = 10234 OR emp_no = 20089;
+select* fROM employees WHERE emp_no > 10040 AND emp_no < 10050;
